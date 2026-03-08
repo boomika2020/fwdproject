@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Resource Management | Enterprise Oracle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="glass-header">
+        <div class="brand">
+            <span class="logo-sq">H</span>
+            <h1>Hospital Resource Scheduling Management System</h1>
+        </div>
+        <div class="user-meta">
+            
+            <button onclick="location.href='login.html'" class="exit-btn">Exit System</button>
+        </div>
+    </header>
+
+    <section class="hero-metrics">
+        <div class="metric-box">
+            <h4>Current Admissions</h4>
+            <span class="number" id="statTotal">1</span>
+        </div>
+        <div class="metric-box">
+            <h4>Available Beds</h4>
+            <span class="number" id="statBeds">450</span>
+        </div>
+        <div class="metric-box warning">
+            <h4>Critical Care Units</h4>
+            <span class="number" id="statICU">10</span>
+        </div>
+        <div class="metric-box info">
+            <h4>Respiratory Assets</h4>
+            <span class="number" id="statVent">05</span>
+        </div>
+    </section>
+
+    <main class="content-wrapper">
+        
+        <div class="section-tag">Standard Clinical Ingress</div>
+        <div class="card shadow-glow">
+            <h3>Standard Service Booking</h3>
+            <form id="appointmentForm" class="grid-form">
+                <input type="text" id="pName" placeholder="Patient Name" required>
+                <select id="pDept" onchange="filterDocs('p')" required>
+                    <option value="">Select Service</option>
+                    <option value="General Medicine">General Medicine</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Diagnostics">Diagnostics</option>
+                    <option value="Physiotherapy">Physiotherapy</option>
+                </select>
+                <select id="pDoc" required>
+                    <option value="">Assigned Staff</option>
+                </select>
+                <select id="pTime" required>
+                    <option value="" disabled selected>Select Slot</option>
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                </select>
+                <button type="submit" class="btn-book">Authorize Booking</button>
+            </form>
+        </div>
+
+        <div class="section-tag">Emergency Asset Deployment</div>
+        <div class="card shadow-glow">
+            <h3>Critical Resource Requisition</h3>
+            <form id="resourceForm" class="grid-form">
+                <input type="text" id="resPatient" placeholder="Critical Case Name" required>
+                <select id="resDept" onchange="filterDocs('res')" required>
+                    <option value="">Emergency Dept</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Emergency/ICU">Emergency/ICU</option>
+                </select>
+                <select id="resDoc" required>
+                    <option value="">Lead Specialist</option>
+                </select>
+                <select id="resType" required>
+                    <option value="">Select Asset</option>
+                    <option value="ICU Bed (Tier-1)">ICU Bed (Tier-1)</option>
+                    <option value="Advanced Ventilator">Advanced Ventilator</option>
+                    <option value="Cardiac Monitor">Cardiac Monitor</option>
+                </select>
+                <button type="submit" class="btn-critical">Deploy Assets</button>
+            </form>
+        </div>
+
+        <div class="section-tag">Live Resource Deployment Schedule</div>
+        <div class="card shadow-glow">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient Entity</th>
+                        <th>Triage Category</th>
+                        <th>Assigned Staff</th>
+                        <th>Allocation / Time</th>
+                        <th>System Control</th>
+                    </tr>
+                </thead>
+                <tbody id="masterTable">
+                    <tr>
+                        <td><strong>Boomika</strong></td>
+                        <td><span class="badge standard">STANDARD</span></td>
+                        <td>Dr. Arvind Swamy</td>
+                        <td>Scheduled: 09:30 AM</td>
+                        <td><button class="btn-release" onclick="this.parentElement.parentElement.remove()">RELEASE</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-tag">Operational Infrastructure & Assets</div>
+        <div class="infra-grid">
+            <div class="card">
+                <h4>Asset Load Analytics</h4>
+                <div class="usage-row">
+                    <span>ICU Capacity</span> 
+                    <div class="bar"><div id="icuBar" style="width: 25%;"></div></div> 
+                    <span id="icuPercent">25%</span>
+                </div>
+                <div class="usage-row">
+                    <span>Respiratory Assets</span> 
+                    <div class="bar"><div id="ventBar" style="width: 10%;"></div></div> 
+                    <span id="ventPercent">10%</span>
+                </div>
+            </div>
+            
+            <div class="card">
+                <h4>Supply Chain Status</h4>
+                <div class="usage-row"><span>Oxygen Reserves</span> <strong>142 Units</strong></div>
+                <div class="usage-row"><span>PPE Kits</span> <strong style="color: var(--alert);">Low: 12</strong></div>
+            </div>
+
+            <div class="card">
+                <h4>Fleet Readiness</h4>
+                <div class="usage-row"><span>UNIT-01</span> <span style="color: var(--alert); font-weight: bold;">EN ROUTE</span></div>
+                <div class="usage-row"><span>UNIT-02</span> <span style="color: var(--success); font-weight: bold;">STANDBY</span></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

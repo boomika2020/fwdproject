@@ -1,0 +1,298 @@
+/* --- CORE THEME & RESET --- */
+:root {
+    --core-navy: #1e293b;
+    --action-blue: #38bdf8;
+    --app-bg: #f1f5f9;
+    --white: #ffffff;
+    --alert: #ef4444;
+    --success: #10b981;
+    --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', system-ui, sans-serif; 
+    background: var(--app-bg); 
+    margin: 0; 
+    color: #334155; 
+}
+
+/* --- 1. MINIMALIST LOGIN PAGE STYLES --- */
+.login-body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #cbd5e1; 
+}
+
+.login-container {
+    width: 900px;
+    height: 520px;
+    background: var(--white);
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.login-side-panel {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=1000') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.login-side-panel .overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(56, 189, 248, 0.8) 100%);
+    z-index: 1;
+}
+
+.panel-content { 
+    position: relative; 
+    z-index: 2; 
+    text-align: center; 
+}
+
+.big-logo {
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: var(--action-blue);
+    color: var(--core-navy);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.panel-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.5px;
+}
+
+.login-form-area { 
+    flex: 1.2; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 60px; 
+}
+
+.form-card { width: 100%; max-width: 320px; }
+
+.form-card h3 { 
+    margin: 0 0 35px 0; 
+    font-size: 1.8rem; 
+    color: var(--core-navy); 
+    font-weight: 800;
+}
+
+.input-group { margin-bottom: 25px; text-align: left; }
+.input-group label { 
+    display: block; 
+    font-size: 0.75rem; 
+    font-weight: 700; 
+    color: #475569; 
+    margin-bottom: 8px; 
+    text-transform: uppercase;
+}
+
+input, select { 
+    width: 100%;
+    padding: 13px 15px; 
+    border: 1px solid #e2e8f0; 
+    border-radius: 10px; 
+    background: #f8fafc; 
+    outline: none; 
+    transition: 0.2s; 
+    font-size: 0.9rem;
+}
+
+input:focus, select:focus { 
+    border-color: var(--action-blue); 
+    background: white; 
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.1);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--core-navy);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.login-btn:hover { 
+    background: #0f172a; 
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 2. DASHBOARD HEADER & LAYOUT --- */
+.glass-header { 
+    background: var(--core-navy); 
+    color: white; 
+    padding: 15px 5%; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000;
+}
+
+.glass-header h1 { font-size: 1.2rem; margin: 0; font-weight: 600; }
+.logo-sq { background: var(--action-blue); color: var(--core-navy); padding: 4px 10px; border-radius: 6px; font-weight: 900; margin-right: 10px; }
+
+.exit-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.exit-btn:hover { background: var(--alert); border-color: var(--alert); }
+
+/* --- 3. METRICS --- */
+.hero-metrics { 
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; 
+    padding: 30px 5% 10px; 
+}
+
+.metric-box { 
+    background: white; 
+    padding: 25px; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); 
+    border-top: 4px solid var(--action-blue); 
+}
+
+.metric-box h4, .metric-box label { 
+    display: block; 
+    margin: 0; 
+    font-size: 0.75rem; 
+    color: #64748b; 
+    text-transform: uppercase; 
+    font-weight: 700;
+}
+
+.metric-box .number, .metric-box h2 { 
+    font-size: 2.2rem; 
+    font-weight: 800; 
+    color: var(--core-navy); 
+    margin: 10px 0 0; 
+}
+
+.metric-box.warning { border-top-color: var(--alert); }
+
+/* --- 4. FORM & CONTENT ELEMENTS --- */
+.content-wrapper { padding: 20px 5% 50px; }
+
+.section-tag { 
+    font-size: 0.7rem; 
+    font-weight: 800; 
+    color: #94a3b8; 
+    text-transform: uppercase; 
+    letter-spacing: 1.2px; 
+    margin: 25px 0 10px; 
+}
+
+.card { 
+    background: white; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); 
+    padding: 30px; 
+}
+
+.grid-form { 
+    display: grid; 
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr; 
+    gap: 15px; 
+    align-items: center;
+}
+
+.btn-book, .btn-critical { 
+    padding: 13px;
+    background: var(--core-navy); 
+    color: white; 
+    border: none; 
+    border-radius: 10px; 
+    font-weight: 700; 
+    cursor: pointer; 
+    transition: 0.2s;
+}
+
+.btn-critical { background: var(--alert); }
+.btn-book:hover, .btn-critical:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* --- 5. DATA TABLE & BADGES --- */
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th { background: #f8fafc; text-align: left; padding: 16px; font-size: 0.7rem; color: #64748b; border-bottom: 1px solid #e2e8f0; text-transform: uppercase; }
+td { padding: 16px; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; }
+
+.badge { padding: 4px 10px; border-radius: 6px; font-size: 10px; font-weight: 800; }
+.badge.standard { background: #e0f2fe; color: #0ea5e9; }
+.badge.critical { background: #fee2e2; color: #ef4444; }
+
+.btn-release {
+    padding: 5px 12px;
+    background: transparent;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+.btn-release:hover { background: #fee2e2; color: var(--alert); border-color: var(--alert); }
+
+/* --- 6. INFRASTRUCTURE & BARS --- */
+.infra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.usage-row { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 15px; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+}
+
+.bar { 
+    background: #e2e8f0; 
+    height: 8px; 
+    width: 50%; 
+    border-radius: 4px; 
+    overflow: hidden; 
+}
+
+.bar div { 
+    height: 100%; 
+    background: var(--action-blue); 
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); 
+}
