@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Web Page</title>
+
+<style>
+body {
+    font-family: Arial;
+    background-color: lavender;
+    margin: 0;
+}
+
+.Content {
+    background-color: pink;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: yellow;
+    text-align: center;
+    padding: 10px;
+}
+
+.Grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 220px);
+    gap: 20px;
+    justify-content: center; 
+    margin: 20px auto;
+}
+
+.box {
+    background-color: darkblue;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+.links a {
+    display: inline-block;
+    background-color: #355c9b;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    margin: 10px 10px 0 0;
+}
+
+.links {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+}
+
+/* OLD certificate style removed */
+/* NEW SIDE-BY-SIDE CERTIFICATES */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    gap: 25px;
+    justify-content: center;
+    padding: 30px;
+}
+
+.cert-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    margin: 20px 0;
+}
+
+.top-header h1 {
+    margin: 0 auto;
+}
+
+.top-header img {
+    width: 110px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-header">
+    <h1>Student Information</h1>
+    <img src="DSC_0272.jpg" alt="Profile Photo">
+</div>
+
+<div class="Content">
+<h2> About Yourself </h2>
+<p> I am a Computer Science student with an interest in programming and web development. I enjoy learning new technologies and improving my coding skills. </p>
+</div>
+
+<div class="Content">
+<h2>Student Details</h2>
+<p>Name: G. Boomika Sre</p>
+<p>Registration number: 2520030010</p>
+<p>Department: CSE</p>
+<p>Year: 2025-2026</p>
+</div>
+
+<div class="Content">
+<h2>Parent Details</h2>
+<p>Father's Name: G. Vinay Kumar</p>
+<p>Mobile number: 9849330214</p>
+<p>Mother's Name: U.K Rashmi</p>
+<p>Mobile number: 9949473369</p>
+</div>
+
+<div class="Content">
+<h2>Student Skills</h2>
+<ol>
+<li>Basics of JAVA</li>
+<li>C Language</li>
+<li>HTML</li>
+</ol>
+</div>
+
+<h2 align="center">Academic Details</h2>
+
+<div class="Grid-container">
+<div class="box">10th Percentage<br>85%</div>
+<div class="box">Intermediate Percentage<br>98%</div>
+<div class="box">B-Tech CGPA<br>9.6</div>
+</div>
+
+<h2>Important Links</h2>
+
+<div class="links">
+    <a href="https://www.linkedin.com/in/g-boomika-sre-a645a23a7" target="_blank">LinkedIn</a>
+    <a href="https://github.com/boomika2020" target="_blank">GitHub</a>
+    <a href="https://www.codechef.com/users/boomika_20" target="_blank">Codechef</a>
+</div>
+
+<h2 align="center">Certifications</h2>
+
+<div class="cert-grid">
+    <img src="certi1.jpg" alt="HTML Essentials Certificate">
+    <img src="certi2.jpg" alt="CSS Essentials Certificate">
+    <img src="certi3.jpg" alt="JavaScript Essentials Certificate">
+</div>
+
+<footer>
+<p>Copyrights @ Student details 2026</p>
+</footer>
+
+</body>
+</html>
